@@ -16,10 +16,10 @@ body html {
 
 /*-- Landing Page --/ */
 #landing {
-  background-image: url(/img/IMG_4879.jpg);
+  background-image: url(img/blank-2.jpg);
   background-size: cover;
   background-position: center;
-  color: white;
+  color: black;
   height: 100vh;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -53,7 +53,8 @@ body html {
 
 /*-- Contact --/ */
 #contact {
-  margin-top: 3%; }
+  margin-top: 5%;
+  margin-bottom: 3%; }
   #contact #social a {
     color: black; }
 
