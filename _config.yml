@@ -1,0 +1,11 @@
+title: Mochammad Fathan Hasibuan
+email: mochfathanhasibuan@gmail.com
+baseurl: /mysite
+facebook_username: Mochammad Fathan Hasibuan
+twitter_username: mochfathan_
+github_username:  mochfathan
+instagram_username: mochfathan_
+exclude: ['README.md']
+markdown: kramdown
+permalink: pretty
+port: 9000
