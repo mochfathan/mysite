@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en ru">
   <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,7 +7,7 @@
   <title>Mochammad Fathan Hasibuan</title>
 
   <!-- Bootstrap  -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="js/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="/css/master.css">
 
@@ -40,7 +40,7 @@
         <li><a href="#landing">Home</a></li>
         <li><a href="#showcase">About</a></li>
         <li><a href="#project">Project</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#form">Contact</a></li>
 
       </ul>
     </div><!-- /.navbar-collapse -->
@@ -48,13 +48,14 @@
 </nav>
 
     <!-- Landing Page -->
-<header  id="landing" style="background: url(/img/IMG_4895.JPG); background-size: cover;
+<section id="landing" style="background: url(/img/IMG_4895.JPG); background-size: cover;
   background-position: center">
   <h1>Hello, <br><h4>Welcome to my personal website!</h4></h1>
-  <a href="#showcase" class="btn btn-info" id="landing-btn">Click Me!</a>
-</header>
+  <a href="#home" class="btn btn-sm btn-info" id="landing-btn">Click Me!</a>
+</section>
 
     <!-- Main Page -->
+<div id="home">
  <section id="showcase">
    <div class="container">
      <div class="row">
@@ -80,6 +81,50 @@
        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<strong>"Blockquote"</strong></p>
        <footer>Quote by <cite title="Fathan">Fathan</cite></footer>
      </blockquote>
+    </div>
+  </section>
+</div>
+
+    <section id="project">
+  <div class="container col-sm-12">
+    <div class="row">
+
+      <div class="panel panel-success" id="project-heading">
+        <div class="panel-heading">
+          <h2 class="text-center">Project<br><small>Below this sections are sample of my project</small></h2>
+        </div>
+
+        <div class="panel-body">
+
+          <div id="project-1">
+            <div class="col-sm-6 col-md-6">
+              <div class="showcase-left">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <br>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              </div>
+            </div>
+
+
+
+            <div class="col-sm-6 col-md-6">
+              <div class="showcase-right">
+              <img src="img/IMG_5417.JPG" alt="Beach" class="img-responsive">
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="well">
+
+        </div>
+
+
+        </div>
+      </div>
+
+    </div>
   </div>
 </section>
 
@@ -87,26 +132,39 @@
     <section id="contact">
   <div class="container">
     <div class="row">
+      <div class="panel-heading">
+        <div class="panel-title">
+        <br>
+        <h2>Contact us:</h2>
+        <br>
+        <small>If you have any question about my Project, Travelling, or Guidance,
+        <br>
+        please contact me through the box below or you can catch me though my Social Networks!</small></h2>
+        <br>
+        </div>
+      </div>
       <div class="col-md-6 col-sm-6">
-        <!-- Form -->
-        <form method="POST" action="//formspree.io/mochfathanhasibuan@gmail.com">
-          <div class="form-group">
-            <label for="Name">Name:</label>
-            <input name="name" placeholder="Name" type="text" class="form-control" id="Name">
-          </div>
+        <!-- Form Start -->
+        <div id="form">
+          <form method="POST" action="//formspree.io/mochfathanhasibuan@gmail.com">
+            <div class="form-group">
+              <label for="Name">Name:</label>
+              <input name="name" placeholder="Name" type="text" class="form-control" id="Name">
+            </div>
 
-          <div class="form-group">
-            <label for="Name">Email:</label>
-            <input  name="email" placeholder="Your email" type="email" class="form-control" id="Email">
-          </div>
+            <div class="form-group">
+              <label for="Name">Email:</label>
+              <input  name="email" placeholder="Your email" type="email" class="form-control" id="Email">
+            </div>
 
-          <div class="form-group">
-            <label>Message</label>
-            <textarea name="message" placeholder="Your message" class="form-control" id="Message" placeholder="Add Message"></textarea>
-          </div>
-          <button type="submit" class="btn btn-default">Submit</button>
-        </form>
-
+            <div class="form-group">
+              <label>Message</label>
+              <textarea name="message" placeholder="Your message" class="form-control" id="Message" placeholder="Add Message"></textarea>
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+          </form>
+        </div>
+        <!-- Form End -->
       </div>
 
       <div class="col-md-6 col-sm-6">
@@ -197,11 +255,24 @@
 </footer>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="/js/jquery/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="/js/bootstrap/js/bootstrap.min.js"></script>
 <!-- ScrollReveal -->
-<script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+<script src="/js/scrollreveal/scrollreveal.min.js"></script>
+<script src="/js/sass/lib/sass.js"></script>
+
+<script>
+
+$(function() {
+
+     $('body').on('click', function() {
+       
+     });
+
+   });
+
+</script>
 
 <script>
     window.sr = ScrollReveal();
@@ -216,9 +287,10 @@
       distance: '500px',
       delay: 1000,
     });
-      sr.reveal('.navbar', {
-        duration: 2000,
-        origin: 'left'
+      sr.reveal('#navtop', {
+        duration: 2750,
+        origin: 'top',
+        distance: '300px',
       });
       sr.reveal('.showcase-left', {
         duration: 2000,
@@ -234,6 +306,16 @@
         duration: 2000,
         origin: 'bottom',
         distance: '500px',
+      });
+      sr.reveal('.panel-heading', {
+        duration: 2000,
+        origin: 'top',
+        distance: '1000px',
+      });
+      sr.reveal('.project-1', {
+        duration: 2000,
+        origin: 'left',
+        distance: '1000px',
       });
       sr.reveal('#contact', {
         duration: 2000,

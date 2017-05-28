@@ -1,26 +1,39 @@
 <section id="contact">
   <div class="container">
     <div class="row">
+      <div class="panel-heading">
+        <div class="panel-title">
+        <br>
+        <h2>Contact us:</h2>
+        <br>
+        <small>If you have any question about my Project, Travelling, or Guidance,
+        <br>
+        please contact me through the box below or you can catch me though my Social Networks!</small></h2>
+        <br>
+        </div>
+      </div>
       <div class="col-md-6 col-sm-6">
-        <!-- Form -->
-        <form method="POST" action="//formspree.io/{{site.email}}">
-          <div class="form-group">
-            <label for="Name">Name:</label>
-            <input name="name" placeholder="Name" type="text" class="form-control" id="Name">
-          </div>
+        <!-- Form Start -->
+        <div id="form">
+          <form method="POST" action="//formspree.io/{{site.email}}">
+            <div class="form-group">
+              <label for="Name">Name:</label>
+              <input name="name" placeholder="Name" type="text" class="form-control" id="Name">
+            </div>
 
-          <div class="form-group">
-            <label for="Name">Email:</label>
-            <input  name="email" placeholder="Your email" type="email" class="form-control" id="Email">
-          </div>
+            <div class="form-group">
+              <label for="Name">Email:</label>
+              <input  name="email" placeholder="Your email" type="email" class="form-control" id="Email">
+            </div>
 
-          <div class="form-group">
-            <label>Message</label>
-            <textarea name="message" placeholder="Your message" class="form-control" id="Message" placeholder="Add Message"></textarea>
-          </div>
-          <button type="submit" class="btn btn-default">Submit</button>
-        </form>
-
+            <div class="form-group">
+              <label>Message</label>
+              <textarea name="message" placeholder="Your message" class="form-control" id="Message" placeholder="Add Message"></textarea>
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+          </form>
+        </div>
+        <!-- Form End -->
       </div>
 
       <div class="col-md-6 col-sm-6">

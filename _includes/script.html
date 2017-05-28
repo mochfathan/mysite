@@ -1,9 +1,22 @@
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="{{site.baseurl}}/js/jquery/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="{{site.baseurl}}/js/bootstrap/js/bootstrap.min.js"></script>
 <!-- ScrollReveal -->
-<script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+<script src="{{site.baseurl}}/js/scrollreveal/scrollreveal.min.js"></script>
+<script src="{{site.baseurl}}/js/sass/lib/sass.js"></script>
+
+<script>
+
+$(function() {
+
+     $('body').on('click', function() {
+       
+     });
+
+   });
+
+</script>
 
 <script>
     window.sr = ScrollReveal();
@@ -18,9 +31,10 @@
       distance: '500px',
       delay: 1000,
     });
-      sr.reveal('.navbar', {
-        duration: 2000,
-        origin: 'left'
+      sr.reveal('#navtop', {
+        duration: 2750,
+        origin: 'top',
+        distance: '300px',
       });
       sr.reveal('.showcase-left', {
         duration: 2000,
@@ -36,6 +50,16 @@
         duration: 2000,
         origin: 'bottom',
         distance: '500px',
+      });
+      sr.reveal('.panel-heading', {
+        duration: 2000,
+        origin: 'top',
+        distance: '1000px',
+      });
+      sr.reveal('.project-1', {
+        duration: 2000,
+        origin: 'left',
+        distance: '1000px',
       });
       sr.reveal('#contact', {
         duration: 2000,
