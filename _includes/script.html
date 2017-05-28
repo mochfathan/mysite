@@ -5,16 +5,24 @@
 <!-- ScrollReveal -->
 <script src="{{site.baseurl}}/js/scrollreveal/scrollreveal.min.js"></script>
 <script src="{{site.baseurl}}/js/sass/lib/sass.js"></script>
+<script src="{{site.baseurl}}/js/jqvmap/dist/jquery.vmap.js"></script>
+<script src="{{site.baseurl}}/js/jqvmap/dist/maps/jquery.vmap.world.js"></script>
+<script src="{{site.baseurl}}/js/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
 
 <script>
 
-$(function() {
-
-     $('body').on('click', function() {
-       
-     });
-
-   });
+$('#vmap').vectorMap({
+    map: 'world_en',
+    backgroundColor: null,
+    color: '#ffffff',
+    hoverOpacity: 0.7,
+    selectedColor: '#666666',
+    enableZoom: true,
+    showTooltip: true,
+    values: sample_data,
+    scaleColors: ['#C8EEFF', '#006491'],
+    normalizeFunction: 'polynomial'
+});
 
 </script>
 

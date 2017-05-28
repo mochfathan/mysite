@@ -7,8 +7,10 @@
   <title>Mochammad Fathan Hasibuan</title>
 
   <!-- Bootstrap  -->
-  <link rel="stylesheet" href="js/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <!-- JQVMap -->
+  <link rel="stylesheet" href="/js/jqvmap/dist/jqvmap.min.css"/>
+  <link rel="stylesheet" href="/js/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/js/font-awesome//css/font-awesome.min.css">
   <link rel="stylesheet" href="/css/master.css">
 
 
@@ -86,7 +88,7 @@
 </div>
 
     <section id="project">
-  <div class="container col-sm-12">
+
     <div class="row">
 
       <div class="panel panel-success" id="project-heading">
@@ -105,6 +107,10 @@
               </div>
             </div>
 
+            <div class text-center id="vmap" style="height: 400px;">
+
+            </div>
+
 
 
             <div class="col-sm-6 col-md-6">
@@ -116,16 +122,14 @@
 
         </div>
 
+
         <div class="well">
 
         </div>
 
 
-        </div>
       </div>
-
     </div>
-  </div>
 </section>
 
     <hr>
@@ -261,16 +265,24 @@
 <!-- ScrollReveal -->
 <script src="/js/scrollreveal/scrollreveal.min.js"></script>
 <script src="/js/sass/lib/sass.js"></script>
+<script src="/js/jqvmap/dist/jquery.vmap.js"></script>
+<script src="/js/jqvmap/dist/maps/jquery.vmap.world.js"></script>
+<script src="/js/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
 
 <script>
 
-$(function() {
-
-     $('body').on('click', function() {
-       
-     });
-
-   });
+$('#vmap').vectorMap({
+    map: 'world_en',
+    backgroundColor: null,
+    color: '#ffffff',
+    hoverOpacity: 0.7,
+    selectedColor: '#666666',
+    enableZoom: true,
+    showTooltip: true,
+    values: sample_data,
+    scaleColors: ['#C8EEFF', '#006491'],
+    normalizeFunction: 'polynomial'
+});
 
 </script>
 
