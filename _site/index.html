@@ -24,7 +24,7 @@
 
   <body>
     <!-- Navbar Top -->
-<nav id="navtop" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
@@ -88,7 +88,7 @@
 </div>
 
     <section id="project">
-
+  <div class="container col-sm-12">
     <div class="row">
 
       <div class="panel panel-success" id="project-heading">
@@ -100,36 +100,34 @@
 
           <div id="project-1">
             <div class="col-sm-6 col-md-6">
-              <div class="showcase-left">
+              <div class="">
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                 <br>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <img src="img/IMG_5417.JPG" alt="Beach" class="img-responsive">
               </div>
             </div>
 
-            <div class text-center id="vmap" style="height: 400px;">
 
-            </div>
+
 
 
 
             <div class="col-sm-6 col-md-6">
-              <div class="showcase-right">
-              <img src="img/IMG_5417.JPG" alt="Beach" class="img-responsive">
+              <div class="">
+              <div class text-center id="vmap" style="height: 600px;">
+
+              </div>
               </div>
             </div>
           </div>
 
-        </div>
-
-
-        <div class="well">
 
         </div>
-
 
       </div>
     </div>
+  </div>
 </section>
 
     <hr>
@@ -305,12 +303,12 @@ $('#vmap').vectorMap({
         distance: '300px',
       });
       sr.reveal('.showcase-left', {
-        duration: 2000,
+        duration: 1500,
         origin: 'top',
         distance: '500px',
       });
       sr.reveal('.showcase-right', {
-        duration: 2000,
+        duration: 1500,
         origin: 'right',
         distance: '500px',
       });
@@ -329,10 +327,15 @@ $('#vmap').vectorMap({
         origin: 'left',
         distance: '1000px',
       });
+      sr.reveal('#vmap', {
+        duration: 2000,
+        origin: 'bottom',
+        distance: '300px',
+      });
       sr.reveal('#contact', {
         duration: 2000,
-        origin: 'right',
-        distance: '1000px',
+        origin: 'bottom',
+        distance: '300px',
       });
 </script>
 
