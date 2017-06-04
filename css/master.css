@@ -43,7 +43,8 @@ body html {
 /*-- Main Page --/ */
 #showcase {
   margin-top: 3.75%;
-  padding-top: 5%; }
+  padding-top: 5%;
+  height: 100vh; }
   #showcase .btn {
     opacity: 0.5; }
   #showcase h1 {
@@ -59,8 +60,10 @@ body html {
 
 /*-- Project Page --/ */
 
-#project
+#project  {
   padding-top: 2%;
+  height: 100vh;
+}
 
 /*-- Contact --/ */
 #contact {
