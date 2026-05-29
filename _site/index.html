@@ -1,353 +1,863 @@
 <!DOCTYPE html>
-<html lang="en ru">
-  <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Mochammad Fathan Hasibuan</title>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mochammad Fathan — AI & Finance Portfolio</title>
+<meta name="description" content="AI Content Reviewer, Data Annotator & Finance Professional based in Jakarta, Indonesia.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#050a14;
+  --s1:#0b1220;
+  --s2:#10192a;
+  --s3:#141e30;
+  --border:rgba(255,255,255,0.07);
+  --border-mid:rgba(255,255,255,0.13);
+  --amber:#e8b840;
+  --amber-dim:rgba(232,184,64,0.1);
+  --amber-border:rgba(232,184,64,0.3);
+  --emerald:#10b981;
+  --emerald-dim:rgba(16,185,129,0.08);
+  --emerald-border:rgba(16,185,129,0.28);
+  --text:#ccd6e0;
+  --text-mid:#8a9bb0;
+  --text-dim:#4a6080;
+  --white:#e8eef5;
+}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:'DM Sans',sans-serif;
+  min-height:100vh;
+  overflow-x:hidden;
+  line-height:1.7;
+}
 
-  <!-- Bootstrap  -->
-  <!-- JQVMap -->
-  <link rel="stylesheet" href="/js/jqvmap/dist/jqvmap.min.css"/>
-  <link rel="stylesheet" href="/js/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/js/font-awesome//css/font-awesome.min.css">
-  <link rel="stylesheet" href="/css/master.css">
+/* ── GRID OVERLAY ── */
+body::before{
+  content:'';position:fixed;inset:0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.015) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,0.015) 1px,transparent 1px);
+  background-size:54px 54px;
+  pointer-events:none;z-index:0;
+}
 
+/* ── AMBIENT GLOW ── */
+body::after{
+  content:'';position:fixed;top:-15%;left:50%;transform:translateX(-50%);
+  width:900px;height:500px;
+  background:radial-gradient(ellipse,rgba(232,184,64,0.035) 0%,transparent 65%);
+  pointer-events:none;z-index:0;
+}
 
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-  <![endif]-->
+.z1{position:relative;z-index:1}
+.wrap{max-width:1100px;margin:0 auto;padding:0 32px}
+
+/* ══════════════════════════════════════
+   NAV
+══════════════════════════════════════ */
+nav{
+  position:sticky;top:0;z-index:100;
+  background:rgba(5,10,20,0.85);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--border);
+  padding:14px 0;
+}
+.nav-inner{
+  display:flex;align-items:center;
+  justify-content:space-between;gap:16px;
+}
+.nav-name{
+  font-family:'Syne',sans-serif;
+  font-weight:800;font-size:16px;
+  color:var(--white);letter-spacing:0.03em;
+}
+.nav-name span{color:var(--amber)}
+.nav-right{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.nav-badge{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:10px;letter-spacing:0.12em;
+  padding:5px 12px;border-radius:3px;
+  border:1px solid var(--amber-border);
+  color:var(--amber);
+  text-decoration:none;
+  transition:background .2s,color .2s;
+}
+.nav-badge:hover{background:var(--amber);color:#050a14}
+.nav-link{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:10px;letter-spacing:0.1em;
+  color:var(--text-dim);
+  text-decoration:none;
+  transition:color .2s;
+}
+.nav-link:hover{color:var(--text)}
+
+/* ══════════════════════════════════════
+   HERO
+══════════════════════════════════════ */
+.hero{padding:88px 0 72px}
+.hero-eyebrow{
+  display:flex;align-items:center;gap:12px;
+  margin-bottom:24px;
+}
+.eyebrow-line{width:36px;height:1px;background:rgba(232,184,64,0.35)}
+.eyebrow-text{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:10px;color:var(--amber);
+  letter-spacing:0.3em;text-transform:uppercase;
+}
+.hero-name{
+  font-family:'Syne',sans-serif;
+  font-weight:800;
+  font-size:clamp(36px,6vw,64px);
+  line-height:1.05;
+  color:var(--white);
+  margin-bottom:6px;
+  letter-spacing:-0.01em;
+}
+.hero-name em{color:var(--amber);font-style:normal}
+.hero-title{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:13px;color:var(--text-mid);
+  letter-spacing:0.08em;
+  margin-bottom:32px;
+}
+.hero-title span{color:var(--emerald)}
+.hero-desc{
+  max-width:640px;
+  font-size:16px;
+  color:var(--text-mid);
+  line-height:1.85;
+  margin-bottom:40px;
+}
+.hero-desc strong{color:var(--text);font-weight:500}
+.hero-cta{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.btn-primary{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--amber);color:#050a14;
+  font-family:'Syne',sans-serif;font-weight:700;
+  font-size:13px;letter-spacing:0.06em;
+  padding:13px 28px;border-radius:4px;
+  text-decoration:none;
+  transition:opacity .2s,transform .15s;
+}
+.btn-primary:hover{opacity:.9;transform:translateY(-1px)}
+.btn-secondary{
+  display:inline-flex;align-items:center;gap:8px;
+  border:1px solid var(--border-mid);
+  color:var(--text-mid);
+  font-family:'IBM Plex Mono',monospace;
+  font-size:11px;letter-spacing:0.1em;
+  padding:12px 24px;border-radius:4px;
+  text-decoration:none;
+  transition:border-color .2s,color .2s;
+}
+.btn-secondary:hover{border-color:var(--text-mid);color:var(--text)}
+.hero-stats{
+  display:flex;align-items:center;gap:32px;
+  margin-top:52px;padding-top:32px;
+  border-top:1px solid var(--border);
+  flex-wrap:wrap;
+}
+.stat-item{text-align:left}
+.stat-num{
+  font-family:'Syne',sans-serif;
+  font-weight:800;font-size:26px;
+  color:var(--white);line-height:1;
+  margin-bottom:4px;
+}
+.stat-num em{color:var(--amber);font-style:normal}
+.stat-label{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:9px;color:var(--text-dim);
+  letter-spacing:0.2em;text-transform:uppercase;
+}
+.stat-divider{width:1px;height:36px;background:var(--border)}
+
+/* ══════════════════════════════════════
+   CREDENTIALS STRIP
+══════════════════════════════════════ */
+.creds-section{
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+  padding:20px 0;
+  background:rgba(11,18,32,0.6);
+}
+.creds-inner{
+  display:flex;align-items:center;gap:12px;
+  flex-wrap:wrap;
+}
+.creds-label{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:9px;color:var(--text-dim);
+  letter-spacing:0.25em;text-transform:uppercase;
+  white-space:nowrap;margin-right:4px;
+}
+.cert-badge{
+  display:inline-flex;align-items:center;gap:6px;
+  background:rgba(232,184,64,0.07);
+  border:1px solid var(--amber-border);
+  border-radius:3px;
+  padding:5px 12px;
+  font-family:'IBM Plex Mono',monospace;
+  font-size:10px;color:var(--amber);
+  letter-spacing:0.06em;white-space:nowrap;
+}
+.cert-badge.inprogress{
+  background:rgba(138,155,176,0.06);
+  border-color:rgba(138,155,176,0.2);
+  color:var(--text-mid);
+}
+.cert-dot{width:5px;height:5px;border-radius:50%;background:var(--amber);flex-shrink:0}
+.cert-dot.grey{background:var(--text-dim)}
+
+/* ══════════════════════════════════════
+   SECTION HEADERS
+══════════════════════════════════════ */
+.section{padding:80px 0}
+.section-header{margin-bottom:52px}
+.section-eyebrow{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:9px;color:var(--amber);
+  letter-spacing:0.3em;text-transform:uppercase;
+  margin-bottom:12px;
+}
+.section-title{
+  font-family:'Syne',sans-serif;
+  font-weight:800;
+  font-size:clamp(24px,3.5vw,36px);
+  color:var(--white);line-height:1.15;
+}
+.section-sub{
+  font-size:14px;color:var(--text-mid);
+  margin-top:10px;max-width:520px;
+}
+
+/* ══════════════════════════════════════
+   PROJECT CARDS
+══════════════════════════════════════ */
+.projects-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(460px,1fr));
+  gap:24px;
+}
+@media(max-width:520px){.projects-grid{grid-template-columns:1fr}}
+
+.project-card{
+  background:var(--s1);
+  border:1px solid var(--border);
+  border-radius:8px;
+  overflow:hidden;
+  transition:border-color .25s,transform .2s;
+  display:flex;flex-direction:column;
+}
+.project-card:hover{transform:translateY(-3px)}
+.project-card.amber-card:hover{border-color:rgba(232,184,64,0.3)}
+.project-card.emerald-card:hover{border-color:rgba(16,185,129,0.3)}
+
+.card-accent{height:3px}
+.amber-accent{background:linear-gradient(90deg,var(--amber),rgba(232,184,64,0.3))}
+.emerald-accent{background:linear-gradient(90deg,var(--emerald),rgba(16,185,129,0.3))}
+
+.card-body{padding:32px;flex:1;display:flex;flex-direction:column}
+.card-header{
+  display:flex;align-items:flex-start;
+  justify-content:space-between;gap:16px;
+  margin-bottom:16px;
+}
+.card-logo{
+  width:44px;height:44px;
+  border-radius:6px;
+  display:grid;place-items:center;
+  font-family:'Syne',sans-serif;
+  font-weight:800;font-size:11px;
+  letter-spacing:0.05em;flex-shrink:0;
+}
+.amber-logo{background:var(--amber);color:#050a14}
+.emerald-logo{background:var(--emerald);color:#050d05}
+
+.card-tag{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:9px;letter-spacing:0.18em;
+  text-transform:uppercase;padding:4px 10px;
+  border-radius:2px;
+}
+.amber-tag{background:var(--amber-dim);color:var(--amber);border:1px solid var(--amber-border)}
+.emerald-tag{background:var(--emerald-dim);color:var(--emerald);border:1px solid var(--emerald-border)}
+
+.card-name{
+  font-family:'Syne',sans-serif;
+  font-weight:800;font-size:20px;
+  color:var(--white);letter-spacing:0.02em;
+  margin-bottom:4px;
+}
+.card-subtitle{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:10px;color:var(--text-dim);
+  letter-spacing:0.15em;text-transform:uppercase;
+  margin-bottom:18px;
+}
+.card-desc{
+  font-size:14px;color:var(--text-mid);
+  line-height:1.8;margin-bottom:24px;flex:1;
+}
+.card-features{
+  display:flex;flex-wrap:wrap;gap:6px;
+  margin-bottom:28px;
+}
+.feature-pill{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:9px;letter-spacing:0.1em;
+  padding:4px 10px;border-radius:2px;
+  background:var(--s2);
+  border:1px solid var(--border);
+  color:var(--text-dim);
+  text-transform:uppercase;
+}
+.card-footer{
+  border-top:1px solid var(--border);
+  padding-top:20px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.card-stack{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:9px;color:var(--text-dim);
+  letter-spacing:0.1em;
+}
+.card-link{
+  display:inline-flex;align-items:center;gap:6px;
+  font-family:'IBM Plex Mono',monospace;
+  font-size:10px;letter-spacing:0.1em;
+  padding:8px 18px;border-radius:3px;
+  text-decoration:none;
+  transition:all .2s;
+  border:1px solid;
+}
+.amber-link{
+  color:var(--amber);border-color:var(--amber-border);
+}
+.amber-link:hover{background:var(--amber);color:#050a14}
+.emerald-link{
+  color:var(--emerald);border-color:var(--emerald-border);
+}
+.emerald-link:hover{background:var(--emerald);color:#050d05}
+.card-link svg{width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+
+/* ══════════════════════════════════════
+   COMPETENCIES
+══════════════════════════════════════ */
+.comp-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:2px;
+}
+.comp-cell{
+  background:var(--s1);
+  border:1px solid var(--border);
+  padding:28px;
+  transition:background .2s;
+}
+.comp-cell:hover{background:var(--s2)}
+.comp-icon{
+  width:36px;height:36px;
+  border-radius:4px;
+  display:grid;place-items:center;
+  margin-bottom:16px;
+  font-size:16px;
+}
+.icon-amber{background:var(--amber-dim);color:var(--amber)}
+.icon-emerald{background:var(--emerald-dim);color:var(--emerald)}
+.icon-blue{background:rgba(58,155,220,0.1);color:#3a9bdc}
+.icon-grey{background:rgba(138,155,176,0.08);color:var(--text-mid)}
+.comp-title{
+  font-family:'Syne',sans-serif;
+  font-weight:700;font-size:13px;
+  color:var(--white);margin-bottom:8px;
+  letter-spacing:0.02em;
+}
+.comp-list{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:10px;color:var(--text-dim);
+  line-height:1.9;letter-spacing:0.02em;
+  list-style:none;
+}
+.comp-list li::before{
+  content:'→ ';color:var(--text-dim);
+}
+
+/* ══════════════════════════════════════
+   ABOUT / POSITIONING
+══════════════════════════════════════ */
+.about-grid{
+  display:grid;
+  grid-template-columns:1fr 420px;
+  gap:60px;align-items:start;
+}
+@media(max-width:860px){.about-grid{grid-template-columns:1fr}}
+
+.about-body{
+  font-size:15px;color:var(--text-mid);
+  line-height:1.9;
+}
+.about-body p{margin-bottom:20px}
+.about-body strong{color:var(--text);font-weight:500}
+
+.about-panel{
+  background:var(--s1);
+  border:1px solid var(--border);
+  border-radius:7px;overflow:hidden;
+}
+.panel-hdr{
+  background:var(--s2);
+  border-bottom:1px solid var(--border);
+  padding:14px 20px;
+  font-family:'IBM Plex Mono',monospace;
+  font-size:9px;color:var(--text-dim);
+  letter-spacing:0.25em;text-transform:uppercase;
+  display:flex;align-items:center;gap:8px;
+}
+.panel-dot{width:6px;height:6px;border-radius:50%;background:var(--amber)}
+.panel-body{padding:20px}
+.info-row{
+  display:flex;justify-content:space-between;
+  align-items:baseline;gap:12px;
+  padding:9px 0;
+  border-bottom:1px solid var(--border);
+  font-size:13px;
+}
+.info-row:last-child{border-bottom:none}
+.info-key{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:9px;color:var(--text-dim);
+  letter-spacing:0.15em;text-transform:uppercase;
+  flex-shrink:0;
+}
+.info-val{
+  color:var(--text);font-size:12px;
+  text-align:right;
+}
+.info-val.amber{color:var(--amber)}
+.info-val.emerald{color:var(--emerald)}
+
+/* ══════════════════════════════════════
+   CONTACT / CTA
+══════════════════════════════════════ */
+.contact-section{
+  border-top:1px solid var(--border);
+  padding:80px 0;
+  text-align:center;
+}
+.contact-tag{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:9px;color:var(--amber);
+  letter-spacing:0.3em;text-transform:uppercase;
+  margin-bottom:20px;
+}
+.contact-title{
+  font-family:'Syne',sans-serif;
+  font-weight:800;
+  font-size:clamp(28px,4vw,48px);
+  color:var(--white);margin-bottom:16px;
+  line-height:1.1;
+}
+.contact-sub{
+  font-size:15px;color:var(--text-mid);
+  max-width:480px;margin:0 auto 40px;
+  line-height:1.8;
+}
+.contact-btns{
+  display:flex;align-items:center;
+  justify-content:center;gap:14px;flex-wrap:wrap;
+}
+
+/* ══════════════════════════════════════
+   FOOTER
+══════════════════════════════════════ */
+footer{
+  border-top:1px solid var(--border);
+  padding:24px 0;
+}
+.footer-inner{
+  display:flex;align-items:center;
+  justify-content:space-between;flex-wrap:wrap;gap:12px;
+}
+.footer-copy{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:10px;color:var(--text-dim);
+  letter-spacing:0.08em;
+}
+.footer-links{display:flex;gap:20px}
+.footer-link{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:10px;color:var(--text-dim);
+  text-decoration:none;letter-spacing:0.08em;
+  transition:color .2s;
+}
+.footer-link:hover{color:var(--amber)}
+
+/* ══════════════════════════════════════
+   ANIMATIONS
+══════════════════════════════════════ */
+.fade-up{
+  opacity:0;transform:translateY(24px);
+  transition:opacity .7s ease,transform .7s ease;
+}
+.fade-up.visible{opacity:1;transform:translateY(0)}
+.fade-up.delay-1{transition-delay:.1s}
+.fade-up.delay-2{transition-delay:.2s}
+.fade-up.delay-3{transition-delay:.3s}
+.fade-up.delay-4{transition-delay:.4s}
+
+@media(max-width:680px){
+  .wrap{padding:0 20px}
+  .hero{padding:60px 0 52px}
+  .hero-stats{gap:20px}
+  .stat-divider{display:none}
+  .section{padding:60px 0}
+  .projects-grid{grid-template-columns:1fr}
+}
+</style>
 </head>
+<body>
 
-  <body>
-    <!-- Navbar Top -->
-<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="">Mochammad Fathan</a>
+<!-- ══ NAV ══ -->
+<nav class="z1">
+  <div class="wrap nav-inner">
+    <span class="nav-name">MFATHAN<span>.</span></span>
+    <div class="nav-right">
+      <a href="#projects" class="nav-link">PROJECTS</a>
+      <a href="#about" class="nav-link">ABOUT</a>
+      <a href="https://www.upwork.com/freelancers/~01963a0f1a105a3e1e" target="_blank" class="nav-badge">HIRE ON UPWORK ↗</a>
     </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse navbar-right" id="navbar">
-      <ul class="nav navbar-nav">
-        <li><a href="#landing">Home</a></li>
-        <li><a href="#showcase">About</a></li>
-        <li><a href="#project">Project</a></li>
-        <li><a href="#form">Contact</a></li>
-
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
+  </div>
 </nav>
 
-    <!-- Landing Page -->
-<section id="landing" style="background: url(/img/IMG_4895.JPG); background-size: cover;
-  background-position: center">
-  <h1>Hello, <br><h4>Welcome to my personal website!</h4></h1>
-  <a href="#home" class="btn btn-sm btn-info" id="landing-btn">Click Me!</a>
+<!-- ══ HERO ══ -->
+<section class="hero z1">
+  <div class="wrap">
+    <div class="hero-eyebrow fade-up">
+      <span class="eyebrow-line"></span>
+      <span class="eyebrow-text">AI &amp; Finance Portfolio — Jakarta, Indonesia</span>
+      <span class="eyebrow-line"></span>
+    </div>
+
+    <h1 class="hero-name fade-up delay-1">
+      Mochammad<br><em>Fathan.</em>
+    </h1>
+
+    <p class="hero-title fade-up delay-2">
+      AI Content Reviewer &amp; Data Annotator &nbsp;/&nbsp;
+      <span>Finance &amp; Accounting Professional</span>
+    </p>
+
+    <p class="hero-desc fade-up delay-3">
+      Detail-oriented, <strong>English-fluent</strong> operational professional with a background in
+      aviation operations and finance &amp; accounting — fields where
+      <strong>precision, protocol compliance, and documentation discipline</strong>
+      are non-negotiable. I bring that same standard to every AI task.
+    </p>
+
+    <div class="hero-cta fade-up delay-4">
+      <a href="https://www.upwork.com/freelancers/~01963a0f1a105a3e1e" target="_blank" class="btn-primary">
+        View Upwork Profile
+        <svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+      </a>
+      <a href="#projects" class="btn-secondary">See My Work</a>
+    </div>
+
+    <div class="hero-stats fade-up delay-4">
+      <div class="stat-item">
+        <div class="stat-num"><em>4</em></div>
+        <div class="stat-label">Anthropic Certifications</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <div class="stat-num"><em>2</em></div>
+        <div class="stat-label">Live AI Projects</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <div class="stat-num"><em>5+</em></div>
+        <div class="stat-label">Years Operations Experience</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <div class="stat-num"><em>EN</em></div>
+        <div class="stat-label">Professional English Fluency</div>
+      </div>
+    </div>
+  </div>
 </section>
 
-    <!-- Main Page -->
-<div id="home">
- <section id="showcase">
-   <div class="container">
-     <div class="row">
-
-       <div class="col-md-6 col-sm-6">
-         <div class="showcase-left">
-           <img src="img/personal-computer.png" alt="" class="img-responsive">
-         </div>
-       </div>
-
-
-       <div class="col-md-6 col-sm-6">
-         <div class="showcase-right">
-           <h2>Hola!<br><small>It means, Hi!</small></h2>
-           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-         </div>
-       </div>
-
-     </div>
-     <!--BlockQuote-->
-     <blockquote id="testimonial" class="blockquote text-center">
-       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<strong>"Blockquote"</strong></p>
-       <footer>Quote by <cite title="Fathan">Fathan</cite></footer>
-     </blockquote>
-    </div>
-  </section>
+<!-- ══ CREDENTIALS STRIP ══ -->
+<div class="creds-section z1">
+  <div class="wrap creds-inner">
+    <span class="creds-label">Certifications</span>
+    <span class="cert-badge"><span class="cert-dot"></span>Claude 101 — Anthropic</span>
+    <span class="cert-badge"><span class="cert-dot"></span>AI Fluency: Framework &amp; Foundations — Anthropic</span>
+    <span class="cert-badge"><span class="cert-dot"></span>Claude Code 101 — Anthropic</span>
+    <span class="cert-badge inprogress"><span class="cert-dot grey"></span>AI Capabilities &amp; Limitations — In Progress</span>
+    <span class="cert-badge"><span class="cert-dot"></span>Technical Analysis — Forex &amp; Commodities</span>
+  </div>
 </div>
 
-    <section id="project">
-  <div class="container col-sm-12">
-    <div class="row">
+<!-- ══ PROJECTS ══ -->
+<section class="section z1" id="projects">
+  <div class="wrap">
+    <div class="section-header fade-up">
+      <div class="section-eyebrow">Featured Work</div>
+      <h2 class="section-title">AI-Powered<br>Portfolio Projects</h2>
+      <p class="section-sub">Interactive tools built using the Anthropic Claude API, demonstrating AI integration, financial domain knowledge, and structured analytical output.</p>
+    </div>
 
-      <div class="panel panel-success" id="project-heading">
-        <div class="panel-heading">
-          <h2 class="text-center">Project<br><small>Below this sections are sample of my project</small></h2>
-        </div>
+    <div class="projects-grid">
 
-
-          <div id="project-1">
-            <div class="col-sm-6 col-md-6">
-              <div class="project-1-l">
-                <br>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                <br>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                <img src="img/IMG_5417.JPG" alt="Beach" class="img-responsive">
-              </div>
-            </div>
-
-
-
-
-
-
-            <div class="col-sm-6 col-md-6">
-              <div class="project-1-r">
-              <div class text-center id="vmap" style="height: 600px;">
-
-              </div>
-              </div>
-            </div>
+      <!-- FINTELLIGENCE -->
+      <div class="project-card amber-card fade-up">
+        <div class="card-accent amber-accent"></div>
+        <div class="card-body">
+          <div class="card-header">
+            <div class="card-logo amber-logo">FIN</div>
+            <span class="card-tag amber-tag">Finance &amp; AI</span>
           </div>
-
-
-
-      </div>
-    </div>
-  </div>
-</section>
-
-    <hr>
-    <section id="contact">
-  <div class="container">
-    <div class="row">
-      <div class="panel-heading">
-        <div class="panel-title">
-        <br>
-        <h2>Contact us:</h2>
-        <br>
-        <small>If you have any question about my Project, Travelling, or Guidance,
-        <br>
-        please contact me through the box below or you can catch me though my Social Networks!</small></h2>
-        <br>
+          <div class="card-name">FINTELLIGENCE</div>
+          <div class="card-subtitle">AI Financial Statement Analyzer</div>
+          <p class="card-desc">
+            Input income statement and balance sheet data to receive a full AI-generated analysis. Calculates eight financial ratios across liquidity, profitability, leverage, and efficiency dimensions, then surfaces risk flags, opportunities, and prioritized action recommendations via Claude Sonnet.
+          </p>
+          <div class="card-features">
+            <span class="feature-pill">Ratio Analysis</span>
+            <span class="feature-pill">Risk Flags</span>
+            <span class="feature-pill">Claude Sonnet API</span>
+            <span class="feature-pill">Structured Output</span>
+            <span class="feature-pill">Financial Modeling</span>
+          </div>
+          <div class="card-footer">
+            <span class="card-stack">HTML · CSS · JS · Claude API</span>
+            <a href="fintelligence.html" class="card-link amber-link">
+              Launch App
+              <svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+            </a>
+          </div>
         </div>
       </div>
-      <div class="col-md-6 col-sm-6">
-        <!-- Form Start -->
-        <div id="form">
-          <form method="POST" action="//formspree.io/mochfathanhasibuan@gmail.com">
-            <div class="form-group">
-              <label for="Name">Name:</label>
-              <input name="name" placeholder="Name" type="text" class="form-control" id="Name">
-            </div>
 
-            <div class="form-group">
-              <label for="Name">Email:</label>
-              <input  name="email" placeholder="Your email" type="email" class="form-control" id="Email">
-            </div>
-
-            <div class="form-group">
-              <label>Message</label>
-              <textarea name="message" placeholder="Your message" class="form-control" id="Message" placeholder="Add Message"></textarea>
-            </div>
-            <button type="submit" class="btn btn-default">Submit</button>
-          </form>
+      <!-- PAJAKPINTAR -->
+      <div class="project-card emerald-card fade-up delay-2">
+        <div class="card-accent emerald-accent"></div>
+        <div class="card-body">
+          <div class="card-header">
+            <div class="card-logo emerald-logo">PAJ</div>
+            <span class="card-tag emerald-tag">Tax &amp; Accounting</span>
+          </div>
+          <div class="card-name">PAJAKPINTAR</div>
+          <div class="card-subtitle">AI Tax Document Intelligence</div>
+          <p class="card-desc">
+            A bilingual (Indonesian / English) AI tool for analyzing business documents against Indonesian tax regulations. Extracts vendor data, applies PPN and PPh 23 withholding tax logic, classifies by Chart of Accounts, and generates double-entry accounting journal entries automatically.
+          </p>
+          <div class="card-features">
+            <span class="feature-pill">PPN / PPh 23</span>
+            <span class="feature-pill">COA Classification</span>
+            <span class="feature-pill">Journal Entries</span>
+            <span class="feature-pill">Bilingual</span>
+            <span class="feature-pill">Claude Sonnet API</span>
+          </div>
+          <div class="card-footer">
+            <span class="card-stack">HTML · CSS · JS · Claude API</span>
+            <a href="pajakpintar.html" class="card-link emerald-link">
+              Launch App
+              <svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+            </a>
+          </div>
         </div>
-        <!-- Form End -->
-      </div>
-
-      <div class="col-md-6 col-sm-6">
-        <h3>Find me on:</h3>
-        <section id="social">
-              <a href="https://www.facebook.com/mochfathanhasibuan"><svg version="1.1" id="Facebook" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-             viewBox="0 0 128 128" enable-background="new 0 0 128 128" height="24px" width="24px" xml:space="preserve">
-          <g>
-            <circle id="facebook-back" fill="#262626" cx="64" cy="64" r="64"/>
-            <path id="facebook-facebook" fill="#FFFFFF" d="M95.1367,29H32.8638C30.7295,29,29,30.729,29,32.8638v62.2729
-              C29,97.2705,30.7295,99,32.8638,99h33.5249V71.8926h-9.1221v-10.565h9.1221v-7.7905c0-9.0415,5.5224-13.9648,13.5888-13.9648
-              c3.8623,0,7.1827,0.2876,8.1504,0.4165v9.4487l-5.5927,0.0024c-4.3877,0-5.2364,2.0845-5.2364,5.1431v6.7446h10.461l-1.3623,10.565
-              h-9.0987V99h17.8379C97.2705,99,99,97.2705,99,95.1367V32.8638C99,30.729,97.2705,29,95.1367,29z"/>
-          </g>
-        </svg>  Facebook  </a>
-
-        <br>
-
-          <a href="https://github.com/mochfathan"><svg version="1.1" id="Github" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-             viewBox="0 0 128 128" height="24px" width="24px" enable-background="new 0 0 128 128" xml:space="preserve">
-          <g>
-            <circle id="github-back" fill="#262626" cx="64" cy="64" r="64"/>
-            <g id="github-github">
-              <path fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" d="M64,29.0449c-19.791,0-35.8398,16.0449-35.8398,35.8399
-                c0,15.8349,10.2695,29.2695,24.5097,34.0088c1.791,0.331,2.4492-0.7784,2.4492-1.7247c0-0.8544-0.0332-3.6777-0.0488-6.6728
-                c-9.9707,2.168-12.0752-4.2285-12.0752-4.2285c-1.6299-4.1426-3.9795-5.2451-3.9795-5.2451
-                c-3.2519-2.2237,0.2456-2.1778,0.2456-2.1778c3.5982,0.253,5.4937,3.6953,5.4937,3.6953
-                c3.1963,5.4776,8.3847,3.8936,10.4297,2.9776c0.3222-2.3164,1.2509-3.8975,2.2754-4.793
-                c-7.96-0.9053-16.3291-3.9785-16.3291-17.7119c0-3.9126,1.4004-7.1104,3.6933-9.6196c-0.3721-0.9034-1.5996-4.5484,0.3477-9.4854
-                c0,0,3.0088-0.9624,9.8574,3.6743c2.8594-0.7939,5.9258-1.1924,8.9707-1.206c3.0459,0.0136,6.1143,0.4121,8.9785,1.206
-                c6.8408-4.6367,9.8467-3.6743,9.8467-3.6743c1.9502,4.937,0.7236,8.582,0.3516,9.4854c2.2978,2.5092,3.6884,5.707,3.6884,9.6196
-                c0,13.7666-8.3847,16.7959-16.3652,17.6846c1.2852,1.1113,2.4297,3.2929,2.4297,6.6367c0,4.7949-0.0401,8.6543-0.0401,9.8349
-                c0,0.9541,0.6456,2.0713,2.4629,1.7198c14.2315-4.7442,24.4883-18.1739,24.4883-34.0039
-                C99.8408,45.0898,83.7939,29.0449,64,29.0449z"/>
-              <path fill="#FFFFFF" d="M41.7354,80.5029c-0.0791,0.1787-0.3594,0.2315-0.6153,0.1104c-0.2597-0.1172-0.4057-0.3604-0.3213-0.5391
-                c0.0772-0.1836,0.3575-0.2344,0.6172-0.1113C41.6768,80.0801,41.8247,80.3242,41.7354,80.5029L41.7354,80.5029z M41.2939,80.1758"
-                />
-              <path fill="#FFFFFF" d="M43.1865,82.123c-0.1709,0.1583-0.5049,0.084-0.7314-0.166c-0.2354-0.25-0.2788-0.584-0.1055-0.7461
-                c0.1768-0.1562,0.5-0.083,0.7354,0.167C43.3193,81.6309,43.3652,81.9619,43.1865,82.123L43.1865,82.123z M42.8447,81.7559"/>
-              <path fill="#FFFFFF" d="M44.5996,84.1865c-0.2197,0.1533-0.5791,0.0088-0.8008-0.3095c-0.2197-0.3184-0.2197-0.7012,0.0049-0.8545
-                c0.2227-0.1524,0.5762-0.0147,0.8013,0.3017C44.8242,83.6475,44.8242,84.0303,44.5996,84.1865L44.5996,84.1865z M44.5996,84.1865"
-                />
-              <path fill="#FFFFFF" d="M46.5356,86.1797c-0.1967,0.2178-0.6147,0.1592-0.9213-0.1367c-0.3135-0.2881-0.4004-0.6992-0.2041-0.916
-                c0.2002-0.2168,0.6211-0.1553,0.9287,0.1386C46.6504,85.5537,46.7451,85.9668,46.5356,86.1797L46.5356,86.1797z M46.5356,86.1797"
-                />
-              <path fill="#FFFFFF" d="M49.2061,87.3389c-0.087,0.2802-0.4893,0.4072-0.8956,0.2881c-0.4052-0.1231-0.6699-0.4512-0.5888-0.7344
-                c0.084-0.2832,0.4892-0.4151,0.8984-0.2881C49.0254,86.7266,49.29,87.0527,49.2061,87.3389L49.2061,87.3389z M49.2061,87.3389"/>
-              <path fill="#FFFFFF" d="M52.1396,87.5527c0.0098,0.2959-0.3339,0.5411-0.7602,0.5469c-0.4282,0.0098-0.7759-0.2305-0.7798-0.5215
-                c0-0.2978,0.3359-0.54,0.7647-0.5478C51.79,87.0225,52.1396,87.2598,52.1396,87.5527L52.1396,87.5527z M52.1396,87.5527"/>
-              <path fill="#FFFFFF" d="M54.8691,87.0889c0.0508,0.2881-0.2451,0.5849-0.6679,0.6631c-0.417,0.0761-0.8018-0.1016-0.8545-0.3877
-                c-0.0518-0.2959,0.25-0.5918,0.6645-0.669C54.4355,86.623,54.8154,86.7959,54.8691,87.0889L54.8691,87.0889z M54.8691,87.0889"/>
-            </g>
-          </g>
-          </svg>  GitHub  </a>
-
-          <br>
-
-          <a href="https://instagram.com/mochfathan_"><svg version="1.1" id="Instagram" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-             viewBox="0 0 128 128" height="24px" width="24px" enable-background="new 0 0 128 128" xml:space="preserve">
-          <g>
-            <circle id="instagram-back" fill="#262626" cx="64" cy="64" r="64"/>
-            <path id="instagram-instagram" fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" d="M91.5713,58.4829h-6.2402
-              c0.4541,1.7651,0.7236,3.6089,0.7236,5.5156c0,12.1831-9.875,22.0562-22.0552,22.0562c-12.1797,0-22.0542-9.8731-22.0542-22.0562
-              c0-1.9067,0.2695-3.7505,0.7246-5.5156h-6.2407v30.3286c0,1.5205,1.2349,2.7549,2.7598,2.7549h49.6215
-              c1.5254,0,2.7608-1.2344,2.7608-2.7549V58.4829z M91.5713,39.186c0-1.5219-1.2354-2.7568-2.7608-2.7568H80.542
-              c-1.5225,0-2.7568,1.2349-2.7568,2.7568v8.272c0,1.522,1.2343,2.7568,2.7568,2.7568h8.2685c1.5254,0,2.7608-1.2348,2.7608-2.7568
-              V39.186z M63.9995,50.2148c-7.6133,0-13.7847,6.1705-13.7847,13.7837c0,7.6128,6.1714,13.7867,13.7847,13.7867
-              c7.6138,0,13.7857-6.1739,13.7857-13.7867C77.7852,56.3853,71.6133,50.2148,63.9995,50.2148 M91.5713,99.8398H36.4292
-              c-4.5664,0-8.269-3.7041-8.269-8.2734V36.4292c0-4.5669,3.7026-8.269,8.269-8.269h55.1421c4.5674,0,8.2685,3.7021,8.2685,8.269
-              v55.1372C99.8398,96.1357,96.1387,99.8398,91.5713,99.8398"/>
-          </g>
-          </svg>  Instagram  </a>
-
-          <br>
-          <br>
-
-          <a href="mailto:mochfathanhasibuan@gmail.com?subject=feedback" class="text-right btn btn-warning">Direct Mail</a>
-
-        </section>
       </div>
 
     </div>
   </div>
 </section>
 
-    <footer class="panel-footer" id="copyright">
-  <p class="text-right">&copy 2017 Mochammad Fathan Hasibuan.</p>
+<!-- ══ ABOUT ══ -->
+<section class="section z1" id="about" style="padding-top:0">
+  <div class="wrap">
+    <div class="about-grid">
+      <div>
+        <div class="section-header fade-up" style="margin-bottom:32px">
+          <div class="section-eyebrow">Background</div>
+          <h2 class="section-title">Why Clients<br>Choose Me</h2>
+        </div>
+        <div class="about-body fade-up delay-1">
+          <p>
+            My professional journey spans <strong>aviation operations management</strong>, where I
+            coordinated time-critical logistics under strict compliance requirements, and
+            <strong>finance &amp; accounting</strong> at an international data centre company —
+            two environments that demand absolute precision, documentation discipline, and
+            the ability to follow complex guidelines without error.
+          </p>
+          <p>
+            I bring these same standards to AI work. Whether evaluating LLM response quality,
+            annotating datasets, or reviewing content for policy compliance, I read every
+            guideline in full, ask one precise clarifying question when ambiguity exists,
+            and never submit work I haven't verified against the original brief.
+          </p>
+          <p>
+            I hold <strong>completed Anthropic Academy certifications</strong> in Claude and AI Fluency,
+            giving me direct, documented knowledge of how LLMs behave, where they fail,
+            and what distinguishes a high-quality AI output from a low-quality one —
+            a meaningful differentiator for evaluation and review tasks.
+          </p>
+        </div>
+      </div>
+
+      <div class="about-panel fade-up delay-2">
+        <div class="panel-hdr">
+          <span class="panel-dot"></span>
+          Professional Profile
+        </div>
+        <div class="panel-body">
+          <div class="info-row">
+            <span class="info-key">Location</span>
+            <span class="info-val">Jakarta Timur, Indonesia</span>
+          </div>
+          <div class="info-row">
+            <span class="info-key">Availability</span>
+            <span class="info-val emerald">Available Now</span>
+          </div>
+          <div class="info-row">
+            <span class="info-key">English Level</span>
+            <span class="info-val amber">Professional Fluency</span>
+          </div>
+          <div class="info-row">
+            <span class="info-key">Preferred</span>
+            <span class="info-val">Fixed-Price · Short-Term</span>
+          </div>
+          <div class="info-row">
+            <span class="info-key">Background</span>
+            <span class="info-val">Aviation · Finance · AI</span>
+          </div>
+          <div class="info-row">
+            <span class="info-key">Education</span>
+            <span class="info-val">Accounting — Univ. Terbuka</span>
+          </div>
+          <div class="info-row">
+            <span class="info-key">Platform</span>
+            <span class="info-val amber">Upwork Freelancer</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ COMPETENCIES ══ -->
+<section class="section z1" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-header fade-up">
+      <div class="section-eyebrow">Capabilities</div>
+      <h2 class="section-title">Core Competencies</h2>
+    </div>
+    <div class="comp-grid">
+      <div class="comp-cell fade-up">
+        <div class="comp-icon icon-amber">◈</div>
+        <div class="comp-title">AI Task Execution</div>
+        <ul class="comp-list">
+          <li>Response evaluation &amp; ranking</li>
+          <li>Preference comparison (RLHF)</li>
+          <li>Output quality scoring</li>
+          <li>Hallucination detection</li>
+          <li>Content moderation review</li>
+        </ul>
+      </div>
+      <div class="comp-cell fade-up delay-1">
+        <div class="comp-icon icon-emerald">◈</div>
+        <div class="comp-title">Data Annotation</div>
+        <ul class="comp-list">
+          <li>Text labeling &amp; categorization</li>
+          <li>Sentiment classification</li>
+          <li>Intent tagging</li>
+          <li>Dataset QA &amp; cleanup</li>
+          <li>Taxonomy &amp; schema design</li>
+        </ul>
+      </div>
+      <div class="comp-cell fade-up delay-2">
+        <div class="comp-icon icon-blue">◈</div>
+        <div class="comp-title">Finance &amp; Accounting</div>
+        <ul class="comp-list">
+          <li>Financial ratio analysis</li>
+          <li>Tax document review (ID)</li>
+          <li>Double-entry bookkeeping</li>
+          <li>COA classification</li>
+          <li>Data entry &amp; reconciliation</li>
+        </ul>
+      </div>
+      <div class="comp-cell fade-up delay-3">
+        <div class="comp-icon icon-grey">◈</div>
+        <div class="comp-title">Operations &amp; VA</div>
+        <ul class="comp-list">
+          <li>Structured research briefs</li>
+          <li>Document review &amp; summary</li>
+          <li>Administrative support</li>
+          <li>Workflow documentation</li>
+          <li>Professional communication</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CONTACT ══ -->
+<div class="contact-section z1">
+  <div class="wrap">
+    <p class="contact-tag fade-up">Open for Work</p>
+    <h2 class="contact-title fade-up delay-1">Ready to Start<br>Your Project</h2>
+    <p class="contact-sub fade-up delay-2">
+      I respond within 24 hours on all active projects. Let's discuss what you need.
+    </p>
+    <div class="contact-btns fade-up delay-3">
+      <a href="https://www.upwork.com/freelancers/~01963a0f1a105a3e1e" target="_blank" class="btn-primary">
+        Hire Me on Upwork
+        <svg viewBox="0 0 24 24" style="width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+      </a>
+      <a href="mailto:mochfathanhasibuan@gmail.com" class="btn-secondary">
+        Direct Email
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ══ FOOTER ══ -->
+<footer class="z1">
+  <div class="wrap footer-inner">
+    <span class="footer-copy">© 2025 Mochammad Fathan Hasibuan · Jakarta, Indonesia</span>
+    <div class="footer-links">
+      <a href="https://github.com/mochfathan" target="_blank" class="footer-link">GitHub</a>
+      <a href="https://www.upwork.com/freelancers/~01963a0f1a105a3e1e" target="_blank" class="footer-link">Upwork</a>
+      <a href="mailto:mochfathanhasibuan@gmail.com" class="footer-link">Email</a>
+    </div>
+  </div>
 </footer>
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="/js/jquery/jquery.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="/js/bootstrap/js/bootstrap.min.js"></script>
-<!-- ScrollReveal -->
-<script src="/js/scrollreveal/scrollreveal.min.js"></script>
-<script src="/js/sass/lib/sass.js"></script>
-<script src="/js/jqvmap/dist/jquery.vmap.js"></script>
-<script src="/js/jqvmap/dist/maps/jquery.vmap.world.js"></script>
-<script src="/js/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
-
 <script>
-
-$('#vmap').vectorMap({
-    map: 'world_en',
-    backgroundColor: null,
-    color: '#ffffff',
-    hoverOpacity: 0.7,
-    selectedColor: '#666666',
-    enableZoom: true,
-    showTooltip: true,
-    values: sample_data,
-    scaleColors: ['#C8EEFF', '#006491'],
-    normalizeFunction: 'polynomial'
-});
-
-</script>
-
-<script>
-    window.sr = ScrollReveal();
-    sr.reveal('#landing-btn', {
-      duration: 1000,
-      origin: 'bottom',
-      distance: '300px',
-      delay: 1000,
-    });
-      sr.reveal('#navtop', {
-        duration: 2750,
-        origin: 'top',
-        distance: '300px',
-      });
-      sr.reveal('.showcase-left', {
-        duration: 1500,
-        origin: 'top',
-        distance: '300px',
-      });
-      sr.reveal('.showcase-right', {
-        duration: 1500,
-        origin: 'right',
-        distance: '500px',
-      });
-      sr.reveal('#testimonial', {
-        duration: 2000,
-        origin: 'bottom',
-        distance: '500px',
-      });
-      sr.reveal('.project-1-l', {
-        duration: 2000,
-        origin: 'left',
-        distance: '300px',
-      });
-      sr.reveal('#vmap', {
-        duration: 2000,
-        origin: 'bottom',
-        distance: '300px',
-      });
-      sr.reveal('#contact', {
-        duration: 2000,
-        origin: 'bottom',
-        distance: '300px',
-      });
-</script>
-
-<script>
-$(function() {
-  // Smooth SCrolling
-  $('a[href*="#"]:not([href="#"])').click(function() {
-    if (location.pathname.replace(/^\//,'') == this.pathname.replace (/^\//,'') &&
-  location.hostname == this.hostname) {
-    var target = $(this.hash);
-    target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-    if (target.length) {
-      $('html, body').animate({
-        scrollTop: target.offset().top
-      }, 1000);
-      return false;
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if(e.isIntersecting) {
+      e.target.classList.add('visible');
+      observer.unobserve(e.target);
     }
+  });
+}, {threshold: 0.1, rootMargin: '0px 0px -40px 0px'});
+
+document.querySelectorAll('.fade-up').forEach(el => {
+  observer.observe(el);
+  if(el.getBoundingClientRect().top < window.innerHeight) {
+    el.classList.add('visible');
   }
 });
-});
-
-
 </script>
-
-  </body>
+</body>
 </html>
